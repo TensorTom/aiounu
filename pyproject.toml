@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "aiounu"
-version = "0.1.0"
-description = "An asyncio module for unu in Python3 using aiohttp."
+version = "0.1.2"
+description = "Asyncio module for unu in Python3 using aiohttp."
 authors = ["TensorTom <14287229+TensorTom@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9.0"
+python = ">=3.7,<4"
 aiohttp = "^3.7.3"
 
 [tool.poetry.dev-dependencies]

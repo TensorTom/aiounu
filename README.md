@@ -1,11 +1,8 @@
 
-# unu
+# aiounu
 
-An asyncio module for [unu](https://u.nu/) in Python3 using aiohttp. Forked from 
-
-## Request
-
-        pip install requests  
+An asyncio module for [unu](https://u.nu/) in Python3 using aiohttp. Forked from
+[vcinex/unu](https://github.com/vcinex/unu).
 
 ## Install
 
@@ -17,6 +14,6 @@ An asyncio module for [unu](https://u.nu/) in Python3 using aiohttp. Forked from
 
 ## Use
 
-        await unu(url="https://vcinex.com", action="shorturl", format="simple",keyword="")
+        short_url = await unu(url="https://example.com/", action="shorturl", format="simple",keyword="")
 
 Only the "url" variable is necessary.
