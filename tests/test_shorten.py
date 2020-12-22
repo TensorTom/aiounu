@@ -1,4 +1,3 @@
-import asyncio
 import aiounu as unu
 import uuid
 

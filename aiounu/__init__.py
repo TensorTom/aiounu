@@ -26,7 +26,6 @@ async def shorten(url="https://example.com", output_format="dot", keyword=""):
 	}
 	session = aiohttp.ClientSession()
 	async with session.post("https://u.nu/api.php", params=data) as resp:
-		print(await resp.text())
 		if resp.status != 200:
 			await session.close()
 			raise HTTPError(f"HTTP returned code {resp.status} rather than 200")

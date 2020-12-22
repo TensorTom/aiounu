@@ -14,7 +14,6 @@ pip install aiounu
 
 ```python
 import aiounu as unu
-import uuid
 
 test_url = "https://example.com/?test=52e838e8-0943-4ccb-bfd8-ae6bb3173bd2"
 unu_resp = await unu.shorten(url=test_url, output_format="dot", keyword="")
