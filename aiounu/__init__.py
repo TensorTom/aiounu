@@ -5,15 +5,6 @@ class HTTPError(Exception):
 	pass
 
 
-def user_choice(*choice):
-	user_input = 0
-	while not 1 <= user_input <= len(choice):
-		for n in range(len(choice)):
-			print("%d. %s" % (n + 1, choice[n]))
-		user_input = int(input("Please Make a choice (only need to input the number): "))
-	return choice[user_input - 1]
-
-
 async def unu(url="https://vcinex.com", action="shorturl", _format="json", keyword=""):
 	"""
 	Shorten a given URL.
