@@ -17,11 +17,14 @@ import aiounu as unu
 import uuid
 
 test_url = "https://example.com/?test=52e838e8-0943-4ccb-bfd8-ae6bb3173bd2"
-unu_resp = await unu.shorten(url=test_url, output_format="json", keyword="")
+unu_resp = await unu.shorten(url=test_url, output_format="dot", keyword="")
 print(unu_resp.shorturl)
 ```
 
 ## Example Result
+
+If `output_format` is set to **dot** (The default), the resulting JSON object properties will be accessible (Thanks to
+[mo-dots](https://pypi.org/project/mo-dots/)) by both dot.notation and dict['notation'].
 
 ```json
 {
