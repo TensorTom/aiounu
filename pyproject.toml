@@ -7,9 +7,15 @@ authors = ["TensorTom <14287229+TensorTom@users.noreply.github.com>"]
 [tool.poetry.dependencies]
 python = ">=3.7,<4"
 aiohttp = "^3.7.3"
+pytest = ">=6.1.1"
+pytest-asyncio = ">=0.14.0"
+pytest-aiohttp = ">=0.3.0"
 
 [tool.poetry.dev-dependencies]
 
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
+
+[pytest]
+testpaths = "tests"

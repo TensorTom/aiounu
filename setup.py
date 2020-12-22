@@ -8,7 +8,10 @@ package_data = \
 {'': ['*']}
 
 install_requires = \
-['aiohttp>=3.7.3,<4.0.0']
+['aiohttp>=3.7.3,<4.0.0',
+ 'pytest-aiohttp>=0.3.0',
+ 'pytest-asyncio>=0.14.0',
+ 'pytest>=6.1.1']
 
 setup_kwargs = {
     'name': 'aiounu',
