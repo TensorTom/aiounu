@@ -14,7 +14,7 @@ def user_choice(*choice):
 	return choice[user_input - 1]
 
 
-async def unu(url="https://vcinex.com", action="shorturl", format="json", keyword=""):
+async def unu(url="https://vcinex.com", action="shorturl", _format="json", keyword=""):
 	"""
 	Shorten a given URL.
 	:param url: The URL to shorten.
@@ -24,17 +24,18 @@ async def unu(url="https://vcinex.com", action="shorturl", format="json", keywor
 	:return:
 	"""
 	if action != "shorturl":
-		action = user_choice("shorturl")
-	if format != "simple":
-		format = user_choice("simple", "xml", "json")
+		raise ValueError(f"Only 'shorturl' action is currently supported. Got: {action}")
+	if _format not in ("simple", "xml", "json"):
+		raise ValueError(f"_format must be one of: 'simple', 'xml', 'json'. Got: {_format}")
 	data = {
 		"action": action,
-		"format": format,
+		"format": _format,
 		"url": url,
 		"keyword": keyword
 	}
 	session = aiohttp.ClientSession()
-	async with session.get("https://u.nu/api.php", params=data) as resp:
+	async with session.post("https://u.nu/api.php", params=data) as resp:
+		print(await resp.text())
 		if resp.status != 200:
 			raise HTTPError(f"HTTP returned code {resp.status} rather than 200")
 		await session.close()
