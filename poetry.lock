@@ -102,6 +102,37 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "mo-dots"
+version = "4.2.20340"
+description = "More Dots! Dot-access to Python dicts like Javascript"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+mo-future = "3.147.20327"
+mo-imports = "3.149.20327"
+
+[[package]]
+name = "mo-future"
+version = "3.147.20327"
+description = "More future! Make Python 2/3 compatibility a bit easier"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "mo-imports"
+version = "3.149.20327"
+description = "More Imports! - Delayed importing"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+mo-future = "3.147.20327"
+
+[[package]]
 name = "multidict"
 version = "5.1.0"
 description = "multidict implementation"
@@ -250,7 +281,7 @@ testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pyt
 
 [metadata]
 python-versions = ">=3.7,<4"
-content-hash = "bd6e33cb98296017ca70a61e241fd79c9f65b26f7706ce8807ee5bb545e9093a"
+content-hash = "ec3d91093e90e66a45b6c2baa8b763b3ff36a8297dec192f380679a72051b9e4"
 
 [metadata.files]
 aiohttp = [
@@ -322,6 +353,15 @@ importlib-metadata = [
 iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
+]
+mo-dots = [
+    {file = "mo-dots-4.2.20340.tar.gz", hash = "sha256:938b3fcfb40dd0c258391b64694ab672d4568f4113cf1378db5b9dc611af401d"},
+]
+mo-future = [
+    {file = "mo-future-3.147.20327.tar.gz", hash = "sha256:4aafcf859e4657bc11b04ee9791321e2d44702604ae01cac7c412468cb6a513f"},
+]
+mo-imports = [
+    {file = "mo-imports-3.149.20327.tar.gz", hash = "sha256:32e3dc720c84765224d29ed7e9d6972a369d41d756e6f26ddb5b7aa01241331d"},
 ]
 multidict = [
     {file = "multidict-5.1.0-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:b7993704f1a4b204e71debe6095150d43b2ee6150fa4f44d6d966ec356a8d61f"},

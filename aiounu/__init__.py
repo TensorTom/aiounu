@@ -1,4 +1,5 @@
 import aiohttp
+from mo_dots import to_data
 
 
 class HTTPError(Exception):
@@ -11,7 +12,8 @@ async def shorten(url="https://example.com", output_format="json", keyword=""):
 	:param url: The URL to shorten.
 	:param output_format: The return format (json, xml, simple)
 	:param keyword: Keyword for the resulting URL (Optional)
-	:return:
+	:return: Returns a dict-like dot.accessible.object if return-type is json,
+			otherwise returns the result string (URL) from u.nu.
 	"""
 
 	if output_format not in ("simple", "xml", "json"):
@@ -29,6 +31,6 @@ async def shorten(url="https://example.com", output_format="json", keyword=""):
 			raise HTTPError(f"HTTP returned code {resp.status} rather than 200")
 		await session.close()
 		if output_format == 'json':
-			return await resp.json()
+			return to_data(await resp.json())
 		else:
 			return await resp.text()
