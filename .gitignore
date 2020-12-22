@@ -600,3 +600,8 @@ pip-selfcheck.json
 .idea/dataSources.local.xml
 # Editor-based HTTP Client requests
 .idea/httpRequests/
+
+.idea/
+.idea/*
+.idea/**
+
