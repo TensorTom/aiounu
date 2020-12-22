@@ -1,12 +1,15 @@
 import asyncio
-import aiounu
-import json
+import aiounu as unu
+import uuid
 
 
 async def test_shorten():
-	short_url = await aiounu.unu(url="https://example.com/", action="shorturl", _format="json", keyword="")
+	test_url = f"https://example.com/?test={uuid.uuid4()}"
+	short_url = await unu.shorten(url=test_url, output_format="json", keyword="")
 	assert 'statusCode' in short_url
 	assert short_url['statusCode'] == 200
 	assert short_url['shorturl'] == 'https://u.nu/example'
 
+
+asyncio.run(test_shorten())
 

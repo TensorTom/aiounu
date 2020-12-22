@@ -5,22 +5,20 @@ class HTTPError(Exception):
 	pass
 
 
-async def unu(url="https://vcinex.com", action="shorturl", _format="json", keyword=""):
+async def shorten(url="https://example.com", output_format="json", keyword=""):
 	"""
 	Shorten a given URL.
 	:param url: The URL to shorten.
-	:param action: API action. Default: shorturl
-	:param format: The return format (json, xml, simple)
+	:param output_format: The return format (json, xml, simple)
 	:param keyword: Keyword for the resulting URL (Optional)
 	:return:
 	"""
-	if action != "shorturl":
-		raise ValueError(f"Only 'shorturl' action is currently supported. Got: {action}")
-	if _format not in ("simple", "xml", "json"):
-		raise ValueError(f"_format must be one of: 'simple', 'xml', 'json'. Got: {_format}")
+
+	if output_format not in ("simple", "xml", "json"):
+		raise ValueError(f"_format must be one of: 'simple', 'xml', 'json'. Got: {output_format}")
 	data = {
-		"action": action,
-		"format": _format,
+		"action": 'shorturl',
+		"format": output_format,
 		"url": url,
 		"keyword": keyword
 	}
@@ -30,4 +28,7 @@ async def unu(url="https://vcinex.com", action="shorturl", _format="json", keywo
 		if resp.status != 200:
 			raise HTTPError(f"HTTP returned code {resp.status} rather than 200")
 		await session.close()
-		return await resp.json()
+		if output_format == 'json':
+			return await resp.json()
+		else:
+			return await resp.text()
